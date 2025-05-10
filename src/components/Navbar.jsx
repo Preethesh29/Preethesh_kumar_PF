@@ -13,6 +13,10 @@ const Nav = styled.nav`
   z-index: 1000;
   padding: 1rem 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 480px) {
+    padding: 0.8rem 0;
+  }
 `
 
 const NavContainer = styled.div`
@@ -22,6 +26,10 @@ const NavContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
 `
 
 const Logo = styled(Link)`
@@ -30,6 +38,10 @@ const Logo = styled(Link)`
   color: var(--text-color);
   text-decoration: none;
   cursor: pointer;
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 `
 
 const NavLinks = styled.div`
@@ -46,9 +58,14 @@ const NavLink = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease;
+  font-size: 1rem;
 
   &:hover {
     color: var(--primary-color);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
   }
 `
 
@@ -59,9 +76,15 @@ const MobileMenuButton = styled.button`
   font-size: 1.5rem;
   color: var(--text-color);
   cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
 
   @media (max-width: 768px) {
     display: block;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.3rem;
   }
 `
 
@@ -76,6 +99,7 @@ const MobileMenu = styled.div`
   padding: 2rem;
   transform: translateX(${({ isOpen }) => (isOpen ? '0' : '100%')});
   transition: transform 0.3s ease;
+  z-index: 1000;
 
   @media (max-width: 768px) {
     display: flex;
@@ -83,6 +107,10 @@ const MobileMenu = styled.div`
     align-items: center;
     justify-content: center;
     gap: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
   }
 `
 

@@ -11,6 +11,10 @@ const HeroSection = styled.section`
   align-items: center;
   padding-top: 80px;
   background: linear-gradient(135deg, #f6f8fd 0%, #ffffff 100%);
+
+  @media (max-width: 768px) {
+    padding-top: 60px;
+  }
 `
 
 const HeroContainer = styled.div`
@@ -18,6 +22,14 @@ const HeroContainer = styled.div`
   margin: 0 auto;
   padding: 0 2rem;
   text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 1rem;
+  }
 `
 
 const HeroContent = styled.div`
@@ -27,6 +39,14 @@ const HeroContent = styled.div`
     margin-bottom: 1.5rem;
     color: var(--text-color);
     overflow: hidden;
+
+    @media (max-width: 768px) {
+      font-size: 3rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 2.5rem;
+    }
   }
 
   p {
@@ -35,6 +55,16 @@ const HeroContent = styled.div`
     margin-bottom: 2.5rem;
     line-height: 1.6;
     overflow: hidden;
+
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
   }
 `
 
@@ -43,6 +73,14 @@ const ButtonGroup = styled.div`
   gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 0.8rem;
+  }
 `
 
 const DownloadButton = styled(motion.a)`
@@ -67,6 +105,16 @@ const DownloadButton = styled(motion.a)`
 
   svg {
     font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
   }
 `
 

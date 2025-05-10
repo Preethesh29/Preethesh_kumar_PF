@@ -5,29 +5,74 @@ import { FaGithub, FaLinkedin, FaInstagramSquare, FaWhatsapp } from 'react-icons
 import emailjs from '@emailjs/browser'
 
 const ContactSection = styled.section`
-  background: white;
+  background: var(--section-bg);
+  padding: 100px 0;
+
+  @media (max-width: 768px) {
+    padding: 80px 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 60px 0;
+  }
 `
 
 const ContactContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 1rem;
+  }
 `
 
-const SectionTitle = styled(motion.h2)`
+const ContactHeader = styled.div`
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: var(--text-color);
+  margin-bottom: 4rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  p {
+    color: var(--light-text);
+    max-width: 600px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      font-size: 0.95rem;
+    }
+  }
 `
 
 const ContactContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
+  align-items: start;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 3rem;
   }
 `
 
@@ -76,63 +121,112 @@ const SocialLinks = styled.div`
   display: flex;
   gap: 1.5rem;
   margin-top: 2rem;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    gap: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1rem;
+  }
 
   a {
     color: var(--text-color);
     font-size: 1.5rem;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+    }
 
     &:hover {
       color: var(--primary-color);
+      transform: translateY(-3px);
     }
   }
 `
 
 const ContactForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+  }
 `
 
 const FormGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 1.2rem;
+  }
 
   label {
+    display: block;
+    margin-bottom: 0.5rem;
     color: var(--text-color);
     font-weight: 500;
+
+    @media (max-width: 768px) {
+      font-size: 0.95rem;
+    }
   }
 
   input,
   textarea {
+    width: 100%;
     padding: 0.8rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 0.5rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
+
+    @media (max-width: 768px) {
+      padding: 0.7rem;
+      font-size: 0.95rem;
+    }
 
     &:focus {
       outline: none;
       border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.1);
     }
   }
 
   textarea {
     min-height: 150px;
     resize: vertical;
+
+    @media (max-width: 768px) {
+      min-height: 120px;
+    }
   }
 `
 
-const SubmitButton = styled.button`
+const SubmitButton = styled(motion.button)`
   background: var(--primary-color);
   color: white;
-  padding: 1rem 2rem;
   border: none;
-  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
   font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: background 0.3s ease;
+  width: 100%;
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 0.9rem 1.8rem;
+    font-size: 0.95rem;
+  }
 
   &:hover {
     background: var(--secondary-color);
@@ -194,14 +288,12 @@ const Contact = () => {
   return (
     <ContactSection id="contact">
       <ContactContainer>
-        <SectionTitle
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          Get In Touch
-        </SectionTitle>
+        <ContactHeader>
+          <h2>Get In Touch</h2>
+          <p>
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+          </p>
+        </ContactHeader>
         <ContactContent>
           <ContactInfo>
             <motion.h3

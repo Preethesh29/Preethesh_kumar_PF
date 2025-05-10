@@ -6,28 +6,60 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 const ProjectsSection = styled.section`
   background: var(--section-bg);
   padding: 100px 0;
+
+  @media (max-width: 768px) {
+    padding: 80px 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 60px 0;
+  }
 `
 
 const ProjectsContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 1rem;
+  }
 `
 
 const ProjectsHeader = styled.div`
   text-align: center;
   margin-bottom: 4rem;
 
+  @media (max-width: 768px) {
+    margin-bottom: 3rem;
+  }
+
   h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--text-color);
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.8rem;
+    }
   }
 
   p {
     color: var(--light-text);
     max-width: 600px;
     margin: 0 auto;
+
+    @media (max-width: 768px) {
+      font-size: 0.95rem;
+    }
   }
 `
 
@@ -35,6 +67,16 @@ const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `
 
 const ProjectCard = styled(motion.div)`
@@ -46,6 +88,10 @@ const ProjectCard = styled(motion.div)`
   position: relative;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    border-radius: 12px;
+  }
 
   &::before {
     content: '';
@@ -79,6 +125,14 @@ const ProjectImage = styled.div`
   justify-content: center;
   color: white;
   font-size: 2rem;
+
+  @media (max-width: 768px) {
+    height: 180px;
+  }
+
+  @media (max-width: 480px) {
+    height: 160px;
+  }
 `
 
 const ProjectContent = styled.div`
@@ -87,16 +141,29 @@ const ProjectContent = styled.div`
   flex-direction: column;
   flex: 1;
 
+  @media (max-width: 768px) {
+    padding: 1.2rem;
+  }
+
   h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--text-color);
+
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+    }
   }
 
   p {
     color: var(--light-text);
     margin-bottom: 1.5rem;
     line-height: 1.6;
+
+    @media (max-width: 768px) {
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
   }
 `
 
@@ -106,12 +173,22 @@ const ProjectTags = styled.div`
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 
+  @media (max-width: 768px) {
+    gap: 0.4rem;
+    margin-bottom: 1.2rem;
+  }
+
   span {
     background: var(--section-bg);
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.9rem;
     color: var(--text-color);
+
+    @media (max-width: 768px) {
+      font-size: 0.85rem;
+      padding: 0.25rem 0.7rem;
+    }
   }
 `
 
@@ -121,6 +198,10 @@ const ProjectLinks = styled.div`
   margin-top: auto;
   padding-top: 1rem;
 
+  @media (max-width: 768px) {
+    gap: 0.8rem;
+  }
+
   a {
     color: var(--primary-color);
     text-decoration: none;
@@ -128,6 +209,11 @@ const ProjectLinks = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-size: 0.95rem;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
 
     &:hover {
       text-decoration: underline;

@@ -7,28 +7,60 @@ import { SiJavascript, SiTypescript, SiPython, SiMongodb, SiPostgresql } from 'r
 const SkillsSection = styled.section`
   background: var(--section-bg);
   padding: 100px 0;
+
+  @media (max-width: 768px) {
+    padding: 80px 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 60px 0;
+  }
 `
 
 const SkillsContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 1rem;
+  }
 `
 
 const SkillsHeader = styled.div`
   text-align: center;
   margin-bottom: 4rem;
 
+  @media (max-width: 768px) {
+    margin-bottom: 3rem;
+  }
+
   h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--text-color);
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.8rem;
+    }
   }
 
   p {
     color: var(--light-text);
     max-width: 600px;
     margin: 0 auto;
+
+    @media (max-width: 768px) {
+      font-size: 0.95rem;
+    }
   }
 `
 
@@ -36,6 +68,16 @@ const SkillsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `
 
 const SkillCategory = styled(motion.div)`
@@ -88,6 +130,53 @@ const SkillCategory = styled(motion.div)`
       content: '▹';
       color: var(--primary-color);
     }
+  }
+`
+
+const SkillCard = styled(motion.div)`
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: var(--text-color);
+
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+    }
+  }
+
+  p {
+    color: var(--light-text);
+    line-height: 1.6;
+
+    @media (max-width: 768px) {
+      font-size: 0.95rem;
+    }
+  }
+`
+
+const SkillIcon = styled.div`
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
   }
 `
 
