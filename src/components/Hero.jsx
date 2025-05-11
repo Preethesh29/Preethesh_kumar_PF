@@ -135,7 +135,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <DownloadButton
-            href="/resume.pdf"
+            href=""
             download
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
