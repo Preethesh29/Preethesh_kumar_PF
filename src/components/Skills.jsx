@@ -219,9 +219,9 @@ const Skills = () => {
       skills: [
         'Python (Pandas, NumPy)',
         'SQL & Database Management',
-        'Excel & Power BI',
-        'Tableau & Data Visualization',
-        'R Programming'
+        'Excel',
+        'Power BI ',
+        'Data Visualization'
       ]
     },
     {
