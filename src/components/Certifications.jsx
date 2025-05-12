@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import freeCodeCampImg from '../assets/Freecodecamp.jpg';
 import pandas from '../assets/DataSciencewithpandas.jpg';
-import uiux from '../assets/Ui_ux.pdf';
+import uiuxs from '../assets/uiux.png';
 
 const CertificationsSection = styled(motion.section)`
   background: var(--section-bg);
@@ -126,8 +126,8 @@ const Certification = () => {
       title: "UI/UX Design Workshop",
       issuer: "SJEC",
       date: "2024",
-      link: uiux,
-      image: uiux
+      link: uiuxs,
+      image: uiuxs
     },
     {
       title: "Data Analysis with Python",
