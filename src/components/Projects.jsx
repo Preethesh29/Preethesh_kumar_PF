@@ -147,6 +147,11 @@ const ProjectButton = styled(motion.a)`
     width: 100%;
     min-width: 200px;
   }
+
+  @media (max-width: 450px) {
+    width: 80%;
+    min-width: 120px;
+  }
 `
 
 const ProjectLinks = styled.div`
