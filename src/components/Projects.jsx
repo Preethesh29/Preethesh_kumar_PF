@@ -1,65 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 
 const ProjectsSection = styled.section`
-  background: var(--section-bg);
   padding: 100px 0;
-
-  @media (max-width: 768px) {
-    padding: 80px 0;
-  }
-
-  @media (max-width: 480px) {
-    padding: 60px 0;
-  }
+  background-color: var(--background);
 `
 
 const ProjectsContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-
-  @media (max-width: 768px) {
-    padding: 0 1.5rem;
-  }
-
-  @media (max-width: 480px) {
-    padding: 0 1rem;
-  }
 `
 
 const ProjectsHeader = styled.div`
   text-align: center;
   margin-bottom: 4rem;
 
-  @media (max-width: 768px) {
-    margin-bottom: 3rem;
-  }
-
   h2 {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
     color: var(--text-color);
-
-    @media (max-width: 768px) {
-      font-size: 2rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 1.8rem;
-    }
+    margin-bottom: 1rem;
   }
 
   p {
     color: var(--light-text);
     max-width: 600px;
     margin: 0 auto;
-
-    @media (max-width: 768px) {
-      font-size: 0.95rem;
-    }
   }
 `
 
@@ -67,16 +34,6 @@ const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
 `
 
 const ProjectCard = styled(motion.div)`
@@ -84,54 +41,30 @@ const ProjectCard = styled(motion.div)`
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  position: relative;
+  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
-
-  @media (max-width: 768px) {
-    border-radius: 12px;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transform: translateX(-100%);
-    z-index: 1;
-  }
-
-  &:hover::before {
-    transform: translateX(100%);
-    transition: transform 0.6s ease;
-  }
+  height: 100%;
 
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   }
 `
 
 const ProjectImage = styled.div`
   width: 100%;
   height: 200px;
-  background: var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 2rem;
+  overflow: hidden;
 
-  @media (max-width: 768px) {
-    height: 180px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
   }
 
-  @media (max-width: 480px) {
-    height: 160px;
+  ${ProjectCard}:hover & img {
+    transform: scale(1.1);
   }
 `
 
@@ -139,56 +72,80 @@ const ProjectContent = styled.div`
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  flex: 1;
-
-  @media (max-width: 768px) {
-    padding: 1.2rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--text-color);
-
-    @media (max-width: 768px) {
-      font-size: 1.3rem;
-    }
-  }
-
-  p {
-    color: var(--light-text);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-
-    @media (max-width: 768px) {
-      font-size: 0.95rem;
-      margin-bottom: 1.2rem;
-    }
-  }
+  flex-grow: 1;
 `
 
-const ProjectTags = styled.div`
+const ProjectTitle = styled.h3`
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+`
+
+const ProjectDescription = styled.p`
+  color: var(--light-text);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+`
+
+const ProjectTech = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+`
 
-  @media (max-width: 768px) {
-    gap: 0.4rem;
-    margin-bottom: 1.2rem;
+const TechTag = styled.span`
+  background: var(--section-bg);
+  color: var(--primary-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+`
+
+const ProjectButton = styled(motion.a)`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-width: 140px;
+  justify-content: center;
+
+  &.primary {
+    background: #2563eb;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+
+    &:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+    }
   }
 
-  span {
-    background: var(--section-bg);
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    color: var(--text-color);
+  &.secondary {
+    background: transparent;
+    border: 2px solid #2563eb;
+    color: #2563eb;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
 
-    @media (max-width: 768px) {
-      font-size: 0.85rem;
-      padding: 0.25rem 0.7rem;
+    &:hover {
+      background: #2563eb;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.2);
     }
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    min-width: 200px;
   }
 `
 
@@ -196,121 +153,36 @@ const ProjectLinks = styled.div`
   display: flex;
   gap: 1rem;
   margin-top: auto;
-  padding-top: 1rem;
-
-  @media (max-width: 768px) {
-    gap: 0.8rem;
-  }
-
-  a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.95rem;
-
-    @media (max-width: 768px) {
-      font-size: 0.9rem;
-    }
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+  padding-top: 1.5rem;
 `
 
 const Projects = () => {
-  const projects = [
+  const projectsData = [
     {
-      title: 'Customer Churn Prediction',
-      description: 'Developed a machine learning model to predict customer churn using historical data. Achieved 85% accuracy in identifying at-risk customers.',
-      tags: ['Python', 'Scikit-learn', 'Pandas', 'Data Visualization'],
-      demo: '#',
-      code: '#'
+      title: 'Sales Performance Dashboard',
+      description: 'Created an interactive Tableau dashboard analyzing sales performance across different regions, products, and time periods, leading to 15% improvement in sales strategy.',
+      image: '/project1.jpg',
+      technologies: ['Tableau', 'SQL', 'Excel', 'Data Visualization'],
+      liveLink: '#',
+      githubLink: '#'
     },
     {
-      title: 'Sales Analytics Dashboard',
-      description: 'Created an interactive dashboard using Tableau to analyze sales performance across different regions and product categories.',
-      tags: ['Tableau', 'SQL', 'Data Visualization', 'Business Intelligence'],
-      demo: '#',
-      code: '#'
+      title: 'Customer Behavior Analysis',
+      description: 'Conducted comprehensive analysis of customer purchase patterns using Python and SQL, resulting in optimized marketing campaigns and 20% increase in customer engagement.',
+      image: '/project2.jpg',
+      technologies: ['Python', 'Pandas', 'Matplotlib', 'SQL'],
+      liveLink: '#',
+      githubLink: '#'
     },
     {
-      title: 'Sentiment Analysis Tool',
-      description: 'Built a natural language processing tool to analyze customer feedback and reviews, providing insights into customer satisfaction.',
-      tags: ['Python', 'NLP', 'TensorFlow', 'Data Analysis'],
-      demo: '#',
-      code: '#'
-    },
-    {
-      title: 'Inventory Optimization',
-      description: 'Implemented a data-driven solution to optimize inventory levels, reducing stockouts by 30% and excess inventory by 25%.',
-      tags: ['Python', 'Statistical Analysis', 'SQL', 'Data Modeling'],
-      demo: '#',
-      code: '#'
-    },
-    {
-      title: 'Market Basket Analysis',
-      description: 'Conducted market basket analysis to identify product associations and optimize store layout and promotional strategies.',
-      tags: ['R', 'Association Rules', 'Data Mining', 'Visualization'],
-      demo: '#',
-      code: '#'
-    },
-    {
-      title: 'Predictive Maintenance System',
-      description: 'Developed a predictive maintenance system using sensor data to forecast equipment failures and optimize maintenance schedules.',
-      tags: ['Python', 'Time Series Analysis', 'Machine Learning', 'IoT'],
-      demo: '#',
-      code: '#'
+      title: 'Market Trend Analysis',
+      description: 'Developed a predictive model using historical market data to identify emerging trends and opportunities, helping stakeholders make data-driven decisions.',
+      image: '/project3.jpg',
+      technologies: ['R', 'Power BI', 'Statistical Analysis', 'Data Modeling'],
+      liveLink: '#',
+      githubLink: '#'
     }
   ]
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  }
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  }
-
-  const imageVariants = {
-    hidden: { scale: 1.1 },
-    visible: {
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  }
-
-  const contentVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.4,
-        delay: 0.2
-      }
-    }
-  }
 
   return (
     <ProjectsSection id="projects">
@@ -319,86 +191,66 @@ const Projects = () => {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
-            Featured Projects
+            Data Analysis Projects
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            A selection of my recent data analysis and machine learning projects
+            Here are some of my recent data analysis projects that demonstrate my analytical skills and business impact
           </motion.p>
         </ProjectsHeader>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <ProjectsGrid>
-            {projects.map((project, index) => (
-              <ProjectCard
-                key={project.title}
-                variants={cardVariants}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.2 }}
-              >
-                <ProjectImage
-                  variants={imageVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                >
-                  <img src={project.image} alt={project.title} />
-                </ProjectImage>
-                <ProjectContent
-                  variants={contentVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                >
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <ProjectTags>
-                    {project.tags.map((tag) => (
-                      <motion.span
-                        key={tag}
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {tag}
-                      </motion.span>
-                    ))}
-                  </ProjectTags>
-                  <ProjectLinks>
-                    <motion.a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <FaExternalLinkAlt /> Live Demo
-                    </motion.a>
-                    <motion.a
-                      href={project.code}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <FaGithub /> View Code
-                    </motion.a>
-                  </ProjectLinks>
-                </ProjectContent>
-              </ProjectCard>
-            ))}
-          </ProjectsGrid>
-        </motion.div>
+        <ProjectsGrid>
+          {projectsData.map((project, index) => (
+            <ProjectCard
+              key={project.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <ProjectImage>
+                <img src={project.image} alt={project.title} />
+              </ProjectImage>
+              <ProjectContent>
+                <ProjectTitle>{project.title}</ProjectTitle>
+                <ProjectDescription>{project.description}</ProjectDescription>
+                <ProjectTech>
+                  {project.technologies.map((tech) => (
+                    <TechTag key={tech}>{tech}</TechTag>
+                  ))}
+                </ProjectTech>
+                <ProjectLinks>
+                  <ProjectButton 
+                    href={project.liveLink} 
+                    className="primary"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Live Demo
+                  </ProjectButton>
+                  <ProjectButton
+                    href={project.githubLink}
+                    className="secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    GitHub
+                  </ProjectButton>
+                </ProjectLinks>
+              </ProjectContent>
+            </ProjectCard>
+          ))}
+        </ProjectsGrid>
       </ProjectsContainer>
     </ProjectsSection>
   )

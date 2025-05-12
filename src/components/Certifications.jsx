@@ -1,163 +1,292 @@
-const CertificationsSection = styled.section`
+import React from 'react';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import freeCodeCampImg from '../assets/Freecodecamp.jpg';
+import pandas from '../assets/DataSciencewithpandas.jpg';
+import uiux from '../assets/Ui_ux.pdf';
+
+const CertificationsSection = styled(motion.section)`
   background: var(--section-bg);
   padding: 100px 0;
-
-  @media (max-width: 768px) {
-    padding: 80px 0;
-  }
-
-  @media (max-width: 480px) {
-    padding: 60px 0;
-  }
-`
+`;
 
 const CertificationsContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+`;
 
-  @media (max-width: 768px) {
-    padding: 0 1.5rem;
-  }
-
-  @media (max-width: 480px) {
-    padding: 0 1rem;
-  }
-`
-
-const CertificationsHeader = styled.div`
+const CertificationsHeader = styled(motion.div)`
   text-align: center;
   margin-bottom: 4rem;
-
-  @media (max-width: 768px) {
-    margin-bottom: 3rem;
-  }
 
   h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--text-color);
-
-    @media (max-width: 768px) {
-      font-size: 2rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 1.8rem;
-    }
   }
+`;
 
-  p {
-    color: var(--light-text);
-    max-width: 600px;
-    margin: 0 auto;
-
-    @media (max-width: 768px) {
-      font-size: 0.95rem;
-    }
-  }
-`
-
-const CertificationsGrid = styled.div`
+const CertificationsGrid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+`;
 
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-`
-
-const CertificateCard = styled(motion.div)`
+const CertificationCard = styled(motion.div)`
   background: white;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 
-  @media (max-width: 768px) {
-    border-radius: 12px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    z-index: 1;
+  }
+
+  &:hover::before {
+    transform: translateX(100%);
+    transition: transform 0.6s ease;
   }
 
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   }
-`
+`;
 
-const CertificateImage = styled.div`
+const CertificationImage = styled(motion.div)`
   width: 100%;
   height: 200px;
-  background: var(--primary-color);
+  background: var(--section-bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 2rem;
+  overflow: hidden;
 
-  @media (max-width: 768px) {
-    height: 180px;
-  }
-
-  @media (max-width: 480px) {
-    height: 160px;
-  }
-
-  img {
+  img, object {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    background: white;
   }
-`
+`;
 
-const CertificateContent = styled.div`
+const CertificationContent = styled(motion.div)`
   padding: 1.5rem;
-
-  @media (max-width: 768px) {
-    padding: 1.2rem;
-  }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 
   h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--text-color);
-
-    @media (max-width: 768px) {
-      font-size: 1.3rem;
-    }
   }
 
   p {
     color: var(--light-text);
-    margin-bottom: 1rem;
-    line-height: 1.6;
-
-    @media (max-width: 768px) {
-      font-size: 0.95rem;
-    }
-  }
-`
-
-const CertificateLink = styled(motion.a)`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-
-  @media (max-width: 768px) {
+    margin-bottom: 0.5rem;
     font-size: 0.9rem;
   }
 
-  &:hover {
-    text-decoration: underline;
+  .issuer {
+    color: var(--primary-color);
+    font-weight: 500;
   }
-` 
+
+  .btn {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+  }
+`;
+
+const Certification = () => {
+  const certifications = [
+    {
+      title: "Data Science with Pandas workshop",
+      issuer: "SJEC",
+      date: "2024",
+      link: pandas,
+      image: pandas
+    },
+    {
+      title: "UI/UX Design Workshop",
+      issuer: "SJEC",
+      date: "2024",
+      link: uiux,
+      image: uiux
+    },
+    {
+      title: "Data Analysis with Python",
+      issuer: "freeCodeCamp",
+      date: "2024",
+      credentialId: "FCC-123456",
+      link: freeCodeCampImg,
+      image: freeCodeCampImg
+    }
+  ];
+
+  const sectionVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        when: "beforeChildren",
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const imageVariants = {
+    hidden: { scale: 1.1, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const contentVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const renderImage = (image) => {
+    if (image.endsWith('.pdf')) {
+      return (
+        <object
+          data={image}
+          type="application/pdf"
+          className="pdf-preview"
+        >
+          <div className="pdf-placeholder">
+            <span>PDF Preview</span>
+          </div>
+        </object>
+      );
+    }
+    return <img src={image} alt="certification" />;
+  };
+
+  return (
+    <CertificationsSection
+      id="certifications"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      <CertificationsContainer>
+        <CertificationsHeader variants={headerVariants}>
+          <motion.h2
+            variants={headerVariants}
+          >
+            Certifications
+          </motion.h2>
+        </CertificationsHeader>
+        <CertificationsGrid>
+          {certifications.map((cert, index) => (
+            <CertificationCard
+              key={index}
+              variants={cardVariants}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <CertificationImage variants={imageVariants}>
+                {renderImage(cert.image)}
+              </CertificationImage>
+              <CertificationContent variants={contentVariants}>
+                <motion.h3
+                  variants={contentVariants}
+                >
+                  {cert.title}
+                </motion.h3>
+                <motion.p 
+                  className="issuer"
+                  variants={contentVariants}
+                >
+                  {cert.issuer}
+                </motion.p>
+                <motion.p 
+                  className="date"
+                  variants={contentVariants}
+                >
+                  {cert.date}
+                </motion.p>
+                {cert.credentialId && (
+                  <motion.p 
+                    className="credential-id"
+                    variants={contentVariants}
+                  >
+                    Credential ID: {cert.credentialId}
+                  </motion.p>
+                )}
+                <motion.a 
+                  href={cert.link} 
+                  className="btn" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  variants={contentVariants}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  View Certificate
+                </motion.a>
+              </CertificationContent>
+            </CertificationCard>
+          ))}
+        </CertificationsGrid>
+      </CertificationsContainer>
+    </CertificationsSection>
+  );
+};
+
+export default Certification; 

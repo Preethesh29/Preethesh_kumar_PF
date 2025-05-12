@@ -1,31 +1,33 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaArrowUp } from 'react-icons/fa'
 
 const ScrollButton = styled(motion.button)`
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  background: var(--primary-color);
+  background: #2563eb;
   color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
   z-index: 1000;
 
   &:hover {
-    background: var(--secondary-color);
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
   }
 
   svg {
-    font-size: 1.2rem;
+    width: 24px;
+    height: 24px;
   }
 `
 
@@ -43,7 +45,9 @@ const ScrollToTop = () => {
 
     window.addEventListener('scroll', toggleVisibility)
 
-    return () => window.removeEventListener('scroll', toggleVisibility)
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility)
+    }
   }, [])
 
   const scrollToTop = () => {
@@ -64,7 +68,17 @@ const ScrollToTop = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          <FaArrowUp />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M12 19V5M5 12l7-7 7 7" />
+          </svg>
         </ScrollButton>
       )}
     </AnimatePresence>
