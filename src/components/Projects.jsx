@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import Swiggy from '../assets/Swiggy_dash.png';
 
 
 const ProjectsSection = styled.section`
@@ -167,7 +168,7 @@ const Projects = () => {
     {
       title: 'Swiggy Dashboard',
       description: 'In this project, I performed an in-depth analysis of Swiggy\'s order data to uncover key trends and insights. The analysis focused on customer behavior, popular cuisines, peak order times, and delivery efficiency.',
-      image: '/src/assets/Swiggy_dash.png',
+      image: Swiggy,
       technologies: ['Power BI','DAX','Data Visualization','Data Cleaning','Data Transformation'],
       liveLink: 'https://github.com/Preethesh29/Swiggy_Data_Analysis/blob/main/Screenshot%202025-05-22%20211535.png',
       githubLink: 'https://github.com/Preethesh29/Swiggy_Data_Analysis'
