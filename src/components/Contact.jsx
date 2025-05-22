@@ -169,15 +169,15 @@ const Contact = () => {
 
     try {
       const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
+        user_name: formData.name,
+        user_email: formData.email,
         message: formData.message,
-        to_name: 'Preethesh Kumar', // Replace with your name
+        to_name: 'Preethesh Kumar',
       }
 
       await emailjs.send(
         'service_e2jlnjh', // Replace with your service ID
-        'template_o45tic4', // Replace with your template ID
+        'template_va7nszn', // Replace with your template ID
         templateParams
       )
 
