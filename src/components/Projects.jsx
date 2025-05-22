@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
+
 const ProjectsSection = styled.section`
   padding: 100px 0;
   background-color: var(--background);
@@ -164,12 +165,12 @@ const ProjectLinks = styled.div`
 const Projects = () => {
   const projectsData = [
     {
-      title: 'Sales Performance Dashboard',
-      description: 'Created an interactive Tableau dashboard analyzing sales performance across different regions, products, and time periods, leading to 15% improvement in sales strategy.',
-      image: '/project1.jpg',
-      technologies: ['Tableau', 'SQL', 'Excel', 'Data Visualization'],
-      liveLink: '#',
-      githubLink: '#'
+      title: 'Swiggy Dashboard',
+      description: 'In this project, I performed an in-depth analysis of Swiggy\'s order data to uncover key trends and insights. The analysis focused on customer behavior, popular cuisines, peak order times, and delivery efficiency.',
+      image: '/src/assets/Swiggy_dash.png',
+      technologies: ['Power BI','DAX','Data Visualization','Data Cleaning','Data Transformation'],
+      liveLink: 'https://github.com/Preethesh29/Swiggy_Data_Analysis/blob/main/Screenshot%202025-05-22%20211535.png',
+      githubLink: 'https://github.com/Preethesh29/Swiggy_Data_Analysis'
     },
     {
       title: 'Customer Behavior Analysis',

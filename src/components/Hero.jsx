@@ -134,21 +134,21 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Hi, I'm Preethesh Kumar
+            Hi, It's me
           </HeroGreeting>
           <HeroTitle
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Data Analyst
+            Preethesh Kumar
           </HeroTitle>
           <HeroSubtitle
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            I transform complex data into actionable insights and meaningful visualizations
+          Aspiring Data Scientist, Data Analyst, and UI/UX Designer with a passion for turning complex data into clear insights and intuitive user experiences.
           </HeroSubtitle>
           <HeroButtons
             initial={{ opacity: 0, y: 20 }}

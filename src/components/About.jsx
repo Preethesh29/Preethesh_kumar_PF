@@ -168,7 +168,7 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h3>3+</h3>
+            <h3>1+</h3>
             <p>Years Experience</p>
           </StatItem>
           <StatItem
@@ -177,7 +177,7 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3>50+</h3>
+            <h3>5+</h3>
             <p>Projects Analyzed</p>
           </StatItem>
           <StatItem
@@ -186,7 +186,7 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3>30+</h3>
+            <h3>3+</h3>
             <p>Data Insights Delivered</p>
           </StatItem>
         </StatsContainer>
