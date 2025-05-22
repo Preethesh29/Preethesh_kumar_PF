@@ -150,7 +150,7 @@ const ProjectButton = styled(motion.a)`
 
   @media (max-width: 450px) {
     width: 80%;
-    min-width: 120px;
+    min-width: 130px;
   }
 `
 

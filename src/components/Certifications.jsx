@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import freeCodeCampImg from '../assets/Freecodecamp.jpg';
 import pandas from '../assets/DataSciencewithpandas.jpg';
 import uiuxs from '../assets/uiux.png';
+import Deloitte from '../assets/deloitte.png';
+
 
 const CertificationsSection = styled(motion.section)`
   background: var(--section-bg);
@@ -133,9 +135,15 @@ const Certification = () => {
       title: "Data Analysis with Python",
       issuer: "freeCodeCamp",
       date: "2024",
-      credentialId: "FCC-123456",
       link: freeCodeCampImg,
       image: freeCodeCampImg
+    },
+    {
+      title: "Data	Analytics	Job	Simulation",
+      issuer: "Deloitte(Forage)",
+      date: "2025",
+      link: Deloitte,
+      image: Deloitte
     }
   ];
 
