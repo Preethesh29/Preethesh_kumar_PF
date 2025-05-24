@@ -7,11 +7,13 @@
 
 :root {
   --primary-color: #2563eb;
-  --secondary-color: #1e40af;
-  --text-color: #1f2937;
-  --light-text: #6b7280;
-  --background: #ffffff;
-  --section-bg: #f3f4f6;
+  --secondary-color: #4f46e5;
+  --accent-color: #f59e0b;
+  --background-light: #ffffff;
+  --background-dark: #1a1a1a;
+  --text-light: #f3f4f6;
+  --text-dark: #1f2937;
+  --transition: all 0.3s ease;
 }
 
 html {
@@ -19,19 +21,36 @@ html {
 }
 
 body {
-  color: var(--text-color);
-  background: var(--background);
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  padding: 5rem 2rem;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-}
-
-section {
-  padding: 5rem 0;
 }
 
 .btn {

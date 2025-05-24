@@ -173,7 +173,7 @@ const Hero = () => {
               Contact Me
             </HeroButton>
             <HeroButton 
-              href="/resume.pdf" 
+              href={resume} 
               className="secondary"
               download
               whileHover={{ scale: 1.02 }}
