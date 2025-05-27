@@ -201,7 +201,7 @@ const Projects = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Data Analysis Projects
+            Projects
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

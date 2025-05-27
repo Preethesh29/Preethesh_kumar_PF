@@ -22,6 +22,10 @@ const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 480px) {
+    padding: 0 1rem;
+  }
 `
 
 const Logo = styled.a`
@@ -33,6 +37,10 @@ const Logo = styled.a`
 
   &:hover {
     color: var(--primary-color);
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.3rem;
   }
 `
 
@@ -51,6 +59,19 @@ const NavLinks = styled.div`
     background: white;
     padding: 1rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    gap: 1rem;
+    animation: ${props => props.isOpen ? 'slideDown 0.3s ease' : 'none'};
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 `
 
@@ -59,9 +80,21 @@ const NavLink = styled.a`
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
+  font-size: 1rem;
 
   &:hover {
     color: var(--primary-color);
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
   }
 `
 
@@ -72,9 +105,19 @@ const MenuButton = styled.button`
   font-size: 1.5rem;
   cursor: pointer;
   color: var(--text-color);
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--primary-color);
+  }
 
   @media (max-width: 768px) {
     display: block;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.3rem;
   }
 `
 
@@ -96,20 +139,38 @@ const Navbar = () => {
     setIsOpen(!isOpen)
   }
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isOpen && !event.target.closest('nav')) {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener('click', handleClickOutside)
+    return () => document.removeEventListener('click', handleClickOutside)
+  }, [isOpen])
+
+  // Close menu when clicking a link
+  const handleLinkClick = () => {
+    setIsOpen(false)
+  }
+
   return (
     <Nav scrolled={scrolled}>
       <NavContainer>
         <Logo href="#home">Preethesh</Logo>
-        <MenuButton onClick={toggleMenu}>
+        <MenuButton onClick={toggleMenu} aria-label="Toggle menu">
           {isOpen ? '✕' : '☰'}
         </MenuButton>
         <NavLinks isOpen={isOpen}>
-          <NavLink href="#home">Home</NavLink>
-          <NavLink href="#about">About</NavLink>
-          <NavLink href="#skills">Skills</NavLink>
-          <NavLink href="#projects">Projects</NavLink>
-          <NavLink href="#certifications">Certifications</NavLink>
-          <NavLink href="#contact">Contact</NavLink>
+          <NavLink href="#home" onClick={handleLinkClick}>Home</NavLink>
+          <NavLink href="#about" onClick={handleLinkClick}>About</NavLink>
+          <NavLink href="#experience" onClick={handleLinkClick}>Experience</NavLink>
+          <NavLink href="#skills" onClick={handleLinkClick}>Skills</NavLink>
+          <NavLink href="#projects" onClick={handleLinkClick}>Projects</NavLink>
+          <NavLink href="#certifications" onClick={handleLinkClick}>Certifications</NavLink>
+          <NavLink href="#contact" onClick={handleLinkClick}>Contact</NavLink>
         </NavLinks>
       </NavContainer>
     </Nav>
