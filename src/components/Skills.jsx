@@ -72,7 +72,7 @@ const Skills = () => {
   const skillsData = [
     {
       category: 'Data Analysis',
-      skills: ['SQL', 'Python', 'R', 'Excel', 'Statistical Analysis', 'Data Cleaning']
+      skills: ['SQL', 'Python', 'Excel', 'Statistical Analysis', 'Data Cleaning']
     },
     {
       category: 'Data Visualization',
@@ -84,7 +84,7 @@ const Skills = () => {
     },
     {
       category: 'Tools & Others',
-      skills: ['Git', 'Jupyter Notebooks', 'Google Analytics', 'A/B Testing', 'Machine Learning Basics', 'Data Warehousing']
+      skills: ['Git', 'Jupyter Notebooks', 'VS Code', 'Machine Learning Basics','Cursor','Quadratic']
     }
   ]
 

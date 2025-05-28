@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import Swiggy from '../assets/Swiggy_dash.png';
+import Shopify from '../assets/Dashboard_pic.png';
 
 
 const ProjectsSection = styled.section`
@@ -182,12 +183,12 @@ const Projects = () => {
       githubLink: '#'
     },
     {
-      title: 'Market Trend Analysis',
-      description: 'Developed a predictive model using historical market data to identify emerging trends and opportunities, helping stakeholders make data-driven decisions.',
-      image: '/project3.jpg',
-      technologies: ['R', 'Power BI', 'Statistical Analysis', 'Data Modeling'],
-      liveLink: '#',
-      githubLink: '#'
+      title: 'Shopify Data Analysis',
+      description: 'The objective is to help stakeholders identify patterns in revenue generation, customer retention, and engagement trends to support data-driven decision-making.',
+      image: Shopify,
+      technologies: ['Power BI', 'Statistical Analysis', 'Data Modeling','DAX'],
+      liveLink: 'https://github.com/Preethesh29/Shopify-Data-Analysis/blob/main/Dashboard_pic.png',
+      githubLink: 'https://github.com/Preethesh29/Shopify-Data-Analysis/tree/main'
     }
   ]
 
