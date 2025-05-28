@@ -184,11 +184,11 @@ const Projects = () => {
     },
     {
       title: 'Shopify Data Analysis',
-      description: 'The objective is to help stakeholders identify patterns in revenue generation, customer retention, and engagement trends to support data-driven decision-making.',
+      description: 'The objective is to help stakeholders identify patterns in revenue generation, customer retention, and engagement trends to support data-driven decision-making..',
       image: Shopify,
       technologies: ['Power BI', 'Statistical Analysis', 'Data Modeling','DAX'],
       liveLink: 'https://github.com/Preethesh29/Shopify-Data-Analysis/blob/main/Dashboard_pic.png',
-      githubLink: 'https://github.com/Preethesh29/Shopify-Data-Analysis/tree/main'
+      githubLink: 'https://github.com/Preethesh29/Shopify-Data-Analysis'
     }
   ]
 
