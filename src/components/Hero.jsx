@@ -84,29 +84,29 @@ const HeroButton = styled(motion.a)`
   justify-content: center;
 
   &.primary {
-    background: #2563eb;
+    background: var(--primary-color);
     color: white;
     border: none;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 4px 15px rgba(26, 26, 26, 0.2);
 
     &:hover {
-      background: #1d4ed8;
+      background: var(--secondary-color);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+      box-shadow: 0 6px 20px rgba(26, 26, 26, 0.3);
     }
   }
 
   &.secondary {
     background: transparent;
-    border: 2px solid #2563eb;
-    color: #2563eb;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(26, 26, 26, 0.1);
 
     &:hover {
-      background: #2563eb;
+      background: var(--primary-color);
       color: white;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.2);
+      box-shadow: 0 6px 20px rgba(26, 26, 26, 0.2);
     }
   }
 

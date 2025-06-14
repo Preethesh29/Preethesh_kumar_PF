@@ -6,7 +6,7 @@ const ScrollButton = styled(motion.button)`
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background: #2563eb;
+  background: var(--primary-color);
   color: white;
   width: 48px;
   height: 48px;
@@ -16,13 +16,13 @@ const ScrollButton = styled(motion.button)`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 4px 15px rgba(26, 26, 26, 0.2);
   z-index: 1000;
 
   &:hover {
-    background: #1d4ed8;
+    background: var(--secondary-color);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 6px 20px rgba(26, 26, 26, 0.3);
   }
 
   svg {
