@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import Swiggy from '../assets/Swiggy_dash.png';
 import Shopify from '../assets/Dashboard_pic.png';
-import youtubee from '../assets/youtube.png';
 
 
 const ProjectsSection = styled.section`
@@ -178,7 +177,7 @@ const Projects = () => {
     {
       title: 'YouTube Data Scraping and Analysis using Python',
       description: 'In this project, I scraped data from YouTube using Python and performed an analysis of the data to uncover key trends and insights.Built a machine learning model to predict user engagement and forecast metrics such as likes and views, achieving 90% accuracy.',
-      image: youtubee,
+      image: Shopify,
       technologies: ['Python', 'Web Scraping', 'Machine Learning', 'Data Analysis'],
       liveLink: 'https://github.com/Preethesh29/Youtube_data-scraping_and_analysis/blob/main/Screenshot%202025-06-21%20094721.png',
       githubLink: 'https://github.com/Preethesh29/Youtube_data-scraping_and_analysis/tree/main'
