@@ -190,7 +190,7 @@ const Experience = () => {
   const experienceData = [
     {
       date: '2025 - present',
-      title: 'Data Analytics Intern,',
+      title: 'Data Analytics Intern',
       company: 'Coreline Solutions',
       description: [
         'Engineered an automated Customer Support Ticket Analytics system using Python and Power BI, slashing resolution times by 15% and boosting customer satisfaction scores by 10 points within one quarter',
