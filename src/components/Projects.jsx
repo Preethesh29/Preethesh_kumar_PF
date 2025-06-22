@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import Swiggy from '../assets/Swiggy_dash.png';
 import Shopify from '../assets/Dashboard_pic.png';
+import youtubee from '../assets/youtube.png';
 
 
 const ProjectsSection = styled.section`
@@ -175,16 +176,16 @@ const Projects = () => {
       githubLink: 'https://github.com/Preethesh29/Swiggy_Data_Analysis'
     },
     {
-      title: 'Customer Behavior Analysis',
-      description: 'Conducted comprehensive analysis of customer purchase patterns using Python and SQL, resulting in optimized marketing campaigns and 20% increase in customer engagement.',
-      image: '/project2.jpg',
-      technologies: ['Python', 'Pandas', 'Matplotlib', 'SQL'],
-      liveLink: '#',
-      githubLink: '#'
+      title: 'YouTube Data Scraping and Analysis using Python',
+      description: 'In this project, I scraped data from YouTube using Python and performed an analysis of the data to uncover key trends and insights.Built a machine learning model to predict user engagement and forecast metrics such as likes and views, achieving 90% accuracy.',
+      image: youtubee,
+      technologies: ['Python', 'Web Scraping', 'Machine Learning', 'Data Analysis'],
+      liveLink: 'https://github.com/Preethesh29/Youtube_data-scraping_and_analysis/blob/main/Screenshot%202025-06-21%20094721.png',
+      githubLink: 'https://github.com/Preethesh29/Youtube_data-scraping_and_analysis/tree/main'
     },
     {
       title: 'Shopify Data Analysis',
-      description: 'The objective is to help stakeholders identify patterns in revenue generation, customer retention, and engagement trends to support data-driven decision-making..',
+      description: 'The objective is to help stakeholders identify patterns in revenue generation, customer retention, and engagement trends to support data-driven decision-making.',
       image: Shopify,
       technologies: ['Power BI', 'Statistical Analysis', 'Data Modeling','DAX'],
       liveLink: 'https://github.com/Preethesh29/Shopify-Data-Analysis/blob/main/Dashboard_pic.png',

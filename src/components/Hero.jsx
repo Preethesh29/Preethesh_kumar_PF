@@ -149,7 +149,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-          Aspiring Data Scientist, Data Analyst, and UI/UX Designer with a passion for turning complex data into clear insights and intuitive user experiences.
+          Passionate about data science, software development, business intelligence, and SQL-based analytics to drive impactful decision-making and seamless user experiences.
           </HeroSubtitle>
           <HeroButtons
             initial={{ opacity: 0, y: 20 }}

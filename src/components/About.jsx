@@ -137,9 +137,7 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              I am a passionate Data Analyst with a strong foundation in data analysis and visualization.
-              With expertise in statistical analysis, data mining, and business intelligence tools,
-              I strive to uncover meaningful patterns and insights that drive informed decision-making.
+              I am a passionate Data Analyst and Aspiring Data Scientist with a strong foundation in data analysis, software development, and user experience design. With expertise in statistical analysis, data visualization, SQL, and business intelligence tools, I aim to transform complex data into meaningful insights that empower smarter decisions.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

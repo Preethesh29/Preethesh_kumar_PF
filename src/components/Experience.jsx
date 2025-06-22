@@ -189,27 +189,16 @@ const TimelineDescriptionItem = styled.li`
 const Experience = () => {
   const experienceData = [
     {
-      date: '2023 - Present',
-      title: 'Data Analyst',
-      company: 'Company Name',
+      date: '2025 - present',
+      title: 'Data Analytics Intern,',
+      company: 'Coreline Solutions',
       description: [
-        'Developed and maintained interactive dashboards using Power BI, resulting in 30% faster decision-making',
-        'Conducted data analysis using Python and SQL to identify trends and patterns',
-        'Collaborated with cross-functional teams to implement data-driven solutions',
-        'Created automated reports that reduced manual work by 40%'
+        'Engineered an automated Customer Support Ticket Analytics system using Python and Power BI, slashing resolution times by 15% and boosting customer satisfaction scores by 10 points within one quarter',
+        'Spearheaded the integration of a live ticketing system API, creating simulated live data feeds for continuous monitoring and data-driven insights; improved issue identification by 20% and fast-tracked resolutions',
+        
       ]
     },
-    {
-      date: '2022 - 2023',
-      title: 'Business Intelligence Intern',
-      company: 'Previous Company',
-      description: [
-        'Assisted in data collection and cleaning processes',
-        'Created visualizations for monthly business reviews',
-        'Participated in data quality improvement initiatives',
-        'Supported senior analysts in report generation'
-      ]
-    }
+    
   ]
 
   return (
