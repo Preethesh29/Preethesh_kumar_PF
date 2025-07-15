@@ -4,6 +4,8 @@ import { motion } from 'framer-motion'
 import Swiggy from '../assets/Swiggy_dash.png';
 import Shopify from '../assets/Dashboard_pic.png';
 import youtube from '../assets/youtubee.png';
+import fir from '../assets/auto_FIR.png';
+
 
 
 const ProjectsSection = styled.section`
@@ -190,6 +192,14 @@ const Projects = () => {
       technologies: ['Power BI', 'Statistical Analysis', 'Data Modeling','DAX'],
       liveLink: 'https://github.com/Preethesh29/Shopify-Data-Analysis/blob/main/Dashboard_pic.png',
       githubLink: 'https://github.com/Preethesh29/Shopify-Data-Analysis'
+    },
+    {
+      title: 'Auto Fir Registration System',
+      description: 'The Auto FIR Registration System is an innovative software application designed to facilitate the efficient filing of First Information Reports (FIRs) for a range of incidents, including vehicle-related cases, theft, assault, murder, and suicide',
+      image: fir,
+      technologies: ['Python', 'PyQt5', 'SQLite', 'GUI'],
+      liveLink: 'https://github.com/Preethesh29/Auto-FIR-Registration-System-/blob/main/Screenshots/Screenshot%202025-06-21%20093108.png',
+      githubLink: 'https://github.com/Preethesh29/Auto-FIR-Registration-System-'
     }
   ]
 

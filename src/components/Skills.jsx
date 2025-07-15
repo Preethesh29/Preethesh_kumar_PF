@@ -80,11 +80,11 @@ const Skills = () => {
     },
     {
       category: 'Business Intelligence',
-      skills: ['Dashboard Creation', 'KPI Tracking', 'Business Metrics', 'Report Automation', 'Data Modeling']
+      skills: ['Dashboard Creation',  'Data Modeling']
     },
     {
       category: 'Tools & Others',
-      skills: ['Git', 'Jupyter Notebooks', 'VS Code', 'Machine Learning Basics','Cursor','Quadratic']
+      skills: ['GitHub', 'Jupyter Notebooks', 'VS Code', 'Machine Learning Basics','Cursor','Quadratic']
     }
   ]
 

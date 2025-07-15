@@ -151,7 +151,7 @@ const Contact = () => {
 
   // Initialize EmailJS
   useEffect(() => {
-    emailjs.init("6cecTVum8F_pO9Tl1") // Replace with your public key
+    emailjs.init("NvEqMX0MIkihVDRP7") // Replace with your public key
   }, [])
 
   const handleChange = (e) => {
