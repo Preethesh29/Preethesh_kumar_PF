@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { FaDownload } from 'react-icons/fa'
-import resume from '../assets/resume_25.pdf';
+import resume from '../assets/Preethesh_resume_25.pdf';
 
 const HeroSection = styled.section`
   min-height: 100vh;
