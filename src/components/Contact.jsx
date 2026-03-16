@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaInstagramSquare, FaWhatsapp } from 'react-icons
 import emailjs from '@emailjs/browser'
 
 const ContactSection = styled.section`
-  background: white;
+  background: var(--section-bg);
 `
 
 const ContactContainer = styled.div`
@@ -107,9 +107,11 @@ const FormGroup = styled.div`
   input,
   textarea {
     padding: 0.8rem;
-    border: 1px solid #e5e7eb;
+    border: 1px solid #333333;
     border-radius: 0.5rem;
     font-size: 1rem;
+    background: black;
+    color: var(--text-color);
     transition: border-color 0.3s ease;
 
     &:focus {

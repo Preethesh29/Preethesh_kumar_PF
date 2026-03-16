@@ -126,7 +126,7 @@ const TimelineItem = styled(motion.div)`
 
 const TimelineContent = styled.div`
   padding: 20px;
-  background: white;
+  background: var(--section-bg);
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 
@@ -168,7 +168,7 @@ const TimelineCompany = styled.h4`
   }
 `
 
-const TimelineDescription = styled.ul`
+const TimelineDescription = styled(motion.ul)`
   color: var(--text-dark);
   opacity: 0.8;
   margin: 0;
@@ -181,7 +181,7 @@ const TimelineDescription = styled.ul`
   }
 `
 
-const TimelineDescriptionItem = styled.li`
+const TimelineDescriptionItem = styled(motion.li)`
   margin-bottom: 5px;
   line-height: 1.5;
 `
@@ -201,6 +201,16 @@ const Experience = () => {
     
   ]
 
+  const ulVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.3 } }
+  };
+
+  const liVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.4 } }
+  };
+
   return (
     <ExperienceSection id="experience">
       <ExperienceContainer>
@@ -208,7 +218,7 @@ const Experience = () => {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5 }}
           >
             Work Experience
@@ -216,7 +226,7 @@ const Experience = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             My professional journey and the impact I've made along the way
@@ -228,16 +238,21 @@ const Experience = () => {
               key={index}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
               <TimelineContent>
                 <TimelineDate>{experience.date}</TimelineDate>
                 <TimelineTitle>{experience.title}</TimelineTitle>
                 <TimelineCompany>{experience.company}</TimelineCompany>
-                <TimelineDescription>
+                <TimelineDescription
+                   variants={ulVariants}
+                   initial="hidden"
+                   whileInView="visible"
+                   viewport={{ once: true, margin: "-50px" }}
+                >
                   {experience.description.map((item, i) => (
-                    <TimelineDescriptionItem key={i}>{item}</TimelineDescriptionItem>
+                    <TimelineDescriptionItem variants={liVariants} key={i}>{item}</TimelineDescriptionItem>
                   ))}
                 </TimelineDescription>
               </TimelineContent>

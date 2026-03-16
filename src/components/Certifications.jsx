@@ -36,7 +36,7 @@ const CertificationsGrid = styled(motion.div)`
 `;
 
 const CertificationCard = styled(motion.div)`
-  background: white;
+  background: var(--section-bg);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -81,7 +81,7 @@ const CertificationImage = styled(motion.div)`
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background: white;
+    background: var(--section-bg);
   }
 `;
 
@@ -230,7 +230,7 @@ const Certification = () => {
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: "-50px" }}
     >
       <CertificationsContainer>
         <CertificationsHeader variants={headerVariants}>

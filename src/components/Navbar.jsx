@@ -8,11 +8,11 @@ const Nav = styled.nav`
   left: 0;
   right: 0;
   z-index: 1000;
-  background: ${props => props.scrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent'};
+  background: ${props => props.scrolled ? 'rgba(17, 17, 17, 0.95)' : 'transparent'};
   backdrop-filter: ${props => props.scrolled ? 'blur(10px)' : 'none'};
   transition: all 0.3s ease;
   padding: 1rem 0;
-  box-shadow: ${props => props.scrolled ? '0 2px 10px rgba(0, 0, 0, 0.1)' : 'none'};
+  box-shadow: ${props => props.scrolled ? '0 2px 10px rgba(0, 0, 0, 0.5)' : 'none'};
 `
 
 const NavContainer = styled.div`
@@ -56,9 +56,9 @@ const NavLinks = styled.div`
     top: 100%;
     left: 0;
     right: 0;
-    background: white;
+    background: var(--section-bg);
     padding: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     gap: 1rem;
     animation: ${props => props.isOpen ? 'slideDown 0.3s ease' : 'none'};
   }

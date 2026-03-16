@@ -43,17 +43,18 @@ const ProjectsGrid = styled.div`
 `
 
 const ProjectCard = styled(motion.div)`
-  background: white;
+  background: var(--section-bg);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
 
   &:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
   }
 `
 
@@ -61,16 +62,32 @@ const ProjectImage = styled.div`
   width: 100%;
   height: 200px;
   overflow: hidden;
+  position: relative;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* Overlay gradient that fades out on hover */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.8) 0%, transparent 60%);
+    transition: opacity 0.4s ease;
+    opacity: 1;
+    pointer-events: none;
   }
 
   ${ProjectCard}:hover & img {
-    transform: scale(1.1);
+    transform: scale(1.15);
+  }
+
+  ${ProjectCard}:hover &::after {
+    opacity: 0;
   }
 `
 
@@ -105,7 +122,17 @@ const TechTag = styled.span`
   color: var(--primary-color);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: default;
+
+  &:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
+  }
 `
 
 const ProjectButton = styled(motion.a)`
@@ -126,12 +153,12 @@ const ProjectButton = styled(motion.a)`
     background: var(--primary-color);
     color: white;
     border: none;
-    box-shadow: 0 4px 15px rgba(26, 26, 26, 0.2);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
 
     &:hover {
       background: var(--secondary-color);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(26, 26, 26, 0.3);
+      box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5); /* Enhanced glowing shadow */
     }
   }
 
@@ -139,13 +166,13 @@ const ProjectButton = styled(motion.a)`
     background: transparent;
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
-    box-shadow: 0 4px 15px rgba(26, 26, 26, 0.1);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.1);
 
     &:hover {
       background: var(--primary-color);
       color: white;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(26, 26, 26, 0.2);
+      box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4); /* Enhanced glowing shadow */
     }
   }
 
@@ -210,7 +237,7 @@ const Projects = () => {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5 }}
           >
             Projects
@@ -218,7 +245,7 @@ const Projects = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             Here are some of my recent data analysis projects that demonstrate my analytical skills and business impact
@@ -228,9 +255,9 @@ const Projects = () => {
           {projectsData.map((project, index) => (
             <ProjectCard
               key={project.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <ProjectImage>

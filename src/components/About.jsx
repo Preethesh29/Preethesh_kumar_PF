@@ -87,7 +87,7 @@ const AboutImage = styled(motion.div)`
   }
 `
 
-const StatsContainer = styled.div`
+const StatsContainer = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
@@ -101,9 +101,9 @@ const StatsContainer = styled.div`
 const StatItem = styled(motion.div)`
   text-align: center;
   padding: 2rem;
-  background: white;
+  background: var(--section-bg);
   border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
   h3 {
     font-size: 2.5rem;
@@ -118,6 +118,16 @@ const StatItem = styled(motion.div)`
 `
 
 const About = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
   return (
     <AboutSection id="about">
       <AboutContainer>
@@ -127,7 +137,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
             >
               About Me
             </motion.h2>
@@ -135,7 +145,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
             >
               I am a passionate Data Analyst and Aspiring Data Scientist with a strong foundation in data analysis, software development, and user experience design. With expertise in statistical analysis, data visualization, SQL, and business intelligence tools, I aim to transform complex data into meaningful insights that empower smarter decisions.
             </motion.p>
@@ -143,7 +153,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
             >
               My journey in data analysis started with a curiosity about understanding patterns and
               making sense of complex information. I believe in continuous learning and staying
@@ -154,36 +164,26 @@ const About = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
           >
             <img src={profilePhoto} alt="Preethesh Kumar" />
           </AboutImage>
         </AboutContent>
-        <StatsContainer>
-          <StatItem
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
+        <StatsContainer
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          <StatItem variants={itemVariants}>
             <h3>1+</h3>
             <p>Years Experience</p>
           </StatItem>
-          <StatItem
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            viewport={{ once: true }}
-          >
+          <StatItem variants={itemVariants}>
             <h3>5+</h3>
             <p>Projects Analyzed</p>
           </StatItem>
-          <StatItem
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            viewport={{ once: true }}
-          >
+          <StatItem variants={itemVariants}>
             <h3>3+</h3>
             <p>Data Insights Delivered</p>
           </StatItem>
