@@ -1,8 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaInstagramSquare, FaWhatsapp, FaEnvelope } from 'react-icons/fa'
-import emailjs from '@emailjs/browser'
 
 const ContactSection = styled.section`
   background: var(--section-bg);
@@ -22,16 +21,13 @@ const SectionTitle = styled(motion.h2)`
 `
 
 const ContactContent = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  justify-content: center;
 `
 
 const ContactInfo = styled.div`
+  text-align: center;
+
   h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
@@ -52,6 +48,7 @@ const ContactDetails = styled.div`
 const ContactDetail = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   margin-bottom: 1rem;
   color: var(--text-color);
@@ -74,6 +71,7 @@ const ContactDetail = styled.div`
 
 const SocialLinks = styled.div`
   display: flex;
+  justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
 
@@ -88,111 +86,7 @@ const SocialLinks = styled.div`
   }
 `
 
-const ContactForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-`
-
-const FormGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-
-  label {
-    color: var(--text-color);
-    font-weight: 500;
-  }
-
-  input,
-  textarea {
-    padding: 0.8rem;
-    border: 1px solid #333333;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    background: black;
-    color: var(--text-color);
-    transition: border-color 0.3s ease;
-
-    &:focus {
-      outline: none;
-      border-color: var(--primary-color);
-    }
-  }
-
-  textarea {
-    min-height: 150px;
-    resize: vertical;
-  }
-`
-
-const SubmitButton = styled.button`
-  background: var(--primary-color);
-  color: white;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-
-  &:hover {
-    background: var(--secondary-color);
-  }
-`
-
 const Contact = () => {
-  const formRef = useRef()
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null)
-
-  // Initialize EmailJS
-  useEffect(() => {
-    emailjs.init("NvEqMX0MIkihVDRP7") // Replace with your public key
-  }, [])
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus(null)
-
-    try {
-      const templateParams = {
-        user_name: formData.name,
-        user_email: formData.email,
-        message: formData.message,
-        to_name: 'Preethesh Kumar',
-      }
-
-      await emailjs.send(
-        'service_e2jlnjh', // Replace with your service ID
-        'template_va7nszn', // Replace with your template ID
-        templateParams
-      )
-
-      setSubmitStatus('success')
-      setFormData({ name: '', email: '', message: '' })
-    } catch (error) {
-      console.error('Error sending email:', error)
-      setSubmitStatus('error')
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
   return (
     <ContactSection id="contact">
       <ContactContainer>
@@ -275,76 +169,10 @@ const Contact = () => {
               </motion.a>
             </SocialLinks>
           </ContactInfo>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <ContactForm ref={formRef} onSubmit={handleSubmit}>
-              <FormGroup>
-                <label htmlFor="name">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  disabled={isSubmitting}
-                />
-              </FormGroup>
-              <FormGroup>
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  disabled={isSubmitting}
-                />
-              </FormGroup>
-              
-              <FormGroup>
-                <label htmlFor="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  disabled={isSubmitting}
-                />
-              </FormGroup>
-              <SubmitButton type="submit" disabled={isSubmitting}>
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-              </SubmitButton>
-              {submitStatus === 'success' && (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  style={{ color: 'green', marginTop: '1rem' }}
-                >
-                  Message sent successfully!
-                </motion.p>
-              )}
-              {submitStatus === 'error' && (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  style={{ color: 'red', marginTop: '1rem' }}
-                >
-                  Failed to send message. Please try again.
-                </motion.p>
-              )}
-            </ContactForm>
-          </motion.div>
         </ContactContent>
       </ContactContainer>
     </ContactSection>
   )
 }
 
-export default Contact 
+export default Contact
