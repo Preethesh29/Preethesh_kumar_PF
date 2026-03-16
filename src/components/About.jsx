@@ -87,35 +87,7 @@ const AboutImage = styled(motion.div)`
   }
 `
 
-const StatsContainer = styled(motion.div)`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`
-
-const StatItem = styled(motion.div)`
-  text-align: center;
-  padding: 2rem;
-  background: var(--section-bg);
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-
-  h3 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    color: var(--light-text);
-    font-size: 1.1rem;
-  }
-`
 
 const About = () => {
   const containerVariants = {
@@ -147,7 +119,7 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true, margin: "-50px" }}
             >
-              I am a passionate Data Analyst and Aspiring Data Scientist with a strong foundation in data analysis, software development, and user experience design. With expertise in statistical analysis, data visualization, SQL, and business intelligence tools, I aim to transform complex data into meaningful insights that empower smarter decisions.
+              I am a Data Science undergraduate at St. Joseph Engineering College with a strong interest in data engineering, analytics, and software development. I enjoy transforming raw data into meaningful insights and building scalable systems that support data-driven decision making.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -155,9 +127,9 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true, margin: "-50px" }}
             >
-              My journey in data analysis started with a curiosity about understanding patterns and
-              making sense of complex information. I believe in continuous learning and staying
-              up-to-date with the latest data analysis tools, techniques, and industry trends.
+              I have hands-on experience with Python, SQL, C++, PySpark, Databricks, and Azure, along with knowledge of machine learning, big data technologies, and data visualization. My projects include building machine learning prediction models, data scraping and analytics platforms, and AI-driven systems.<br />
+              <br />
+              I am always eager to learn new technologies, collaborate on innovative projects, and contribute to building impactful solutions in the fields of data engineering, analytics, and software development.
             </motion.p>
           </AboutText>
           <AboutImage
@@ -169,25 +141,7 @@ const About = () => {
             <img src={profilePhoto} alt="Preethesh Kumar" />
           </AboutImage>
         </AboutContent>
-        <StatsContainer
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          <StatItem variants={itemVariants}>
-            <h3>1+</h3>
-            <p>Years Experience</p>
-          </StatItem>
-          <StatItem variants={itemVariants}>
-            <h3>5+</h3>
-            <p>Projects Analyzed</p>
-          </StatItem>
-          <StatItem variants={itemVariants}>
-            <h3>3+</h3>
-            <p>Data Insights Delivered</p>
-          </StatItem>
-        </StatsContainer>
+
       </AboutContainer>
     </AboutSection>
   )

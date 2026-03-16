@@ -135,6 +135,7 @@ const TimelineContent = styled.div`
   }
 `
 
+
 const TimelineDate = styled.span`
   color: var(--primary-color);
   font-weight: 600;
@@ -195,10 +196,10 @@ const Experience = () => {
       description: [
         'Engineered an automated Customer Support Ticket Analytics system using Python and Power BI, slashing resolution times by 15% and boosting customer satisfaction scores by 10 points within one quarter',
         'Spearheaded the integration of a live ticketing system API, creating simulated live data feeds for continuous monitoring and data-driven insights; improved issue identification by 20% and fast-tracked resolutions',
-        
+
       ]
     },
-    
+
   ]
 
   const ulVariants = {
@@ -246,10 +247,10 @@ const Experience = () => {
                 <TimelineTitle>{experience.title}</TimelineTitle>
                 <TimelineCompany>{experience.company}</TimelineCompany>
                 <TimelineDescription
-                   variants={ulVariants}
-                   initial="hidden"
-                   whileInView="visible"
-                   viewport={{ once: true, margin: "-50px" }}
+                  variants={ulVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-50px" }}
                 >
                   {experience.description.map((item, i) => (
                     <TimelineDescriptionItem variants={liVariants} key={i}>{item}</TimelineDescriptionItem>
@@ -264,4 +265,5 @@ const Experience = () => {
   )
 }
 
-export default Experience 
+export default Experience
+
