@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaInstagramSquare, FaWhatsapp } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaInstagramSquare, FaWhatsapp, FaEnvelope } from 'react-icons/fa'
 import emailjs from '@emailjs/browser'
 
 const ContactSection = styled.section`
@@ -222,6 +222,12 @@ const Contact = () => {
             >
               I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
             </motion.p>
+            <ContactDetails>
+              <ContactDetail>
+                <FaEnvelope style={{ color: 'white' }} />
+                <a href="mailto:preethesh.kumar29@gmail.com">preethesh.kumar29@gmail.com</a>
+              </ContactDetail>
+            </ContactDetails>
             <SocialLinks>
               <motion.a
                 href="https://github.com/Preethesh29"

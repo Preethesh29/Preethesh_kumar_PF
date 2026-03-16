@@ -190,12 +190,13 @@ const TimelineDescriptionItem = styled(motion.li)`
 const Experience = () => {
   const experienceData = [
     {
-      date: '2025 - present',
-      title: 'Data Analytics Intern',
-      company: 'Coreline Solutions',
+      date: '2026 - present',
+      title: 'Platform and Data Engineer Intern',
+      company: 'InternAge',
       description: [
-        'Engineered an automated Customer Support Ticket Analytics system using Python and Power BI, slashing resolution times by 15% and boosting customer satisfaction scores by 10 points within one quarter',
-        'Spearheaded the integration of a live ticketing system API, creating simulated live data feeds for continuous monitoring and data-driven insights; improved issue identification by 20% and fast-tracked resolutions',
+        'Designed and supported data preprocessing and transformation workflows using Apache Spark and Databricks.',
+        'Worked with structured datasets using SQL to extract, clean, and analyse data.',
+        'Assisted in developing scalable data pipelines and platform components in a cloud-based environment'
 
       ]
     },

@@ -117,11 +117,11 @@ const GlowingCard = ({ index, children }) => {
   };
 
   return (
-    <Tilt 
-      tiltMaxAngleX={10} 
-      tiltMaxAngleY={10} 
-      scale={1.02} 
-      transitionSpeed={2500} 
+    <Tilt
+      tiltMaxAngleX={10}
+      tiltMaxAngleY={10}
+      scale={1.02}
+      transitionSpeed={2500}
       className="parallax-effect"
       glareEnable={false}
     >
@@ -144,7 +144,7 @@ const Skills = () => {
   const skillsData = [
     {
       category: 'Data Analysis',
-      skills: ['SQL', 'Python', 'Excel', 'Statistical Analysis', 'Data Cleaning']
+      skills: ['MySQL', 'Python', 'Excel', 'Statistical Analysis', 'Data Cleaning']
     },
     {
       category: 'Data Visualization',
@@ -152,11 +152,11 @@ const Skills = () => {
     },
     {
       category: 'Business Intelligence',
-      skills: ['Dashboard Creation',  'Data Modeling']
+      skills: ['Dashboard Creation', 'Data Modeling']
     },
     {
       category: 'Tools & Others',
-      skills: ['GitHub', 'Jupyter Notebooks', 'VS Code', 'Machine Learning Basics','Cursor','Quadratic']
+      skills: ['GitHub', 'AZURE Cloud', 'VS Code', 'Machine Learning Basics', 'Apache Spark', 'Databricks']
     }
   ]
 
@@ -172,8 +172,8 @@ const Skills = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, scale: 0.8 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
       transition: {
         type: "spring",

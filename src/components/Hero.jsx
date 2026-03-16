@@ -170,11 +170,15 @@ const Hero = () => {
           >
             <TypeAnimation
               sequence={[
-                'Data Analyst',
+                'Aspiring Data Analyst',
                 2000,
                 'Aspiring Data Scientist',
                 2000,
-                'Business Intelligence Enthusiast',
+                'Aspiring Data Engineer',
+                2000,
+                'Aspiring Software Engineer',
+                2000,
+                'Aspiring Business Intelligence Enthusiast',
                 2000,
                 'Problem Solver',
                 2000
