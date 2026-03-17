@@ -55,7 +55,7 @@ img {
 
 section {
   padding: 5rem 2rem;
-  background-color: var(--background-light);
+  background-color: transparent;
 }
 
 .container {

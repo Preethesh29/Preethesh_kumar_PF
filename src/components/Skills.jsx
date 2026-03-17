@@ -5,7 +5,7 @@ import Tilt from 'react-parallax-tilt'
 
 const SkillsSection = styled.section`
   padding: 100px 0;
-  background-color: var(--section-bg);
+  background-color: transparent;
 `
 
 const SkillsContainer = styled.div`
@@ -156,7 +156,7 @@ const Skills = () => {
     },
     {
       category: 'Tools & Others',
-      skills: ['GitHub', 'AZURE Cloud', 'VS Code', 'Machine Learning Basics', 'Apache Spark', 'Databricks']
+      skills: ['GitHub', 'Git', 'Azure Cloud', 'VS Code', 'Machine Learning Basics', 'Apache Spark', 'Databricks']
     }
   ]
 

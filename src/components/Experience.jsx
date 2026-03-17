@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 const ExperienceSection = styled.section`
   padding: 100px 0;
-  background-color: var(--background-light);
+  background-color: transparent;
 
   @media (max-width: 768px) {
     padding: 60px 0;

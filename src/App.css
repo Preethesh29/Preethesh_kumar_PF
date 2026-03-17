@@ -57,7 +57,7 @@ section {
 }
 
 .certifications {
-  background-color: var(--section-bg);
+  background-color: transparent;
 }
 
 .certifications-grid {

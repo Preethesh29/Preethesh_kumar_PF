@@ -9,7 +9,7 @@ const HeroSection = styled.section`
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-color: var(--background);
+  background-color: transparent;
   padding: 100px 0;
   overflow: hidden; /* Prevent horizontal scroll from initial slide-in */
 `

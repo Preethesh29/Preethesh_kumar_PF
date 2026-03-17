@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import profilePhoto from '../assets/My_pic.JPG'
 
 const AboutSection = styled.section`
-  background: var(--section-bg);
+  background: transparent;
 `
 
 const AboutContainer = styled.div`

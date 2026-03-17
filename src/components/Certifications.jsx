@@ -8,7 +8,7 @@ import Deloitte from '../assets/deloitte.png';
 
 
 const CertificationsSection = styled(motion.section)`
-  background: var(--section-bg);
+  background: transparent;
   padding: 100px 0;
 `;
 

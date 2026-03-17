@@ -10,7 +10,7 @@ import fir from '../assets/auto_FIR.png';
 
 const ProjectsSection = styled.section`
   padding: 100px 0;
-  background-color: var(--background);
+  background-color: transparent;
 `
 
 const ProjectsContainer = styled.div`

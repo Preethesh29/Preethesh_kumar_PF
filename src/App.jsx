@@ -9,28 +9,32 @@ import Experience from './components/Experience'
 import Certifications from './components/Certifications'
 import Contact from './components/Contact'
 import ScrollToTop from './components/ScrollToTop'
+import ParticlesBackground from './components/ParticlesBackground'
 import './App.css'
 
 function App() {
   return (
     <>
-      <Navbar />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <main>
-          <Hero />
-          <About />
-          <Experience />
-          <Skills />
-          <Projects />
-          <Certifications />
-          <Contact />
-        </main>
-        <ScrollToTop />
-      </motion.div>
+      <ParticlesBackground />
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <Navbar />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <main>
+            <Hero />
+            <About />
+            <Experience />
+            <Skills />
+            <Projects />
+            <Certifications />
+            <Contact />
+          </main>
+          <ScrollToTop />
+        </motion.div>
+      </div>
     </>
   )
 }

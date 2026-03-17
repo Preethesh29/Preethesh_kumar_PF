@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaInstagramSquare, FaWhatsapp, FaEnvelope } from 'react-icons/fa'
 
 const ContactSection = styled.section`
-  background: var(--section-bg);
+  background: transparent;
 `
 
 const ContactContainer = styled.div`
