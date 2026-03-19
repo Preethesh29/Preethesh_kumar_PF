@@ -6,6 +6,8 @@ import Shopify from '../assets/Dashboard_pic.png';
 import youtube from '../assets/youtubee.png';
 import fir from '../assets/auto_FIR.png';
 import mjr from '../assets/MajorProject.jpg';
+import routewise from '../assets/MCP.png';
+
 
 
 
@@ -206,14 +208,7 @@ const Projects = () => {
       liveLink: '',
       githubLink: ''
     },
-    {
-      title: 'Swiggy Dashboard',
-      description: 'In this project, I performed an in-depth analysis of Swiggy\'s order data to uncover key trends and insights. The analysis focused on customer behavior, popular cuisines, peak order times, and delivery efficiency.',
-      image: Swiggy,
-      technologies: ['Power BI', 'DAX', 'Data Visualization', 'Data Cleaning', 'Data Transformation'],
-      liveLink: 'https://github.com/Preethesh29/Swiggy_Data_Analysis/blob/main/Screenshot%202025-05-22%20211535.png',
-      githubLink: 'https://github.com/Preethesh29/Swiggy_Data_Analysis'
-    },
+
     {
       title: 'YouTube Data Scraping and Analysis using Python',
       description: 'In this project, I scraped data from YouTube using Python and performed an analysis of the data to uncover key trends and insights.Built a machine learning model to predict user engagement and forecast metrics such as likes and views, achieving 90% accuracy.',
@@ -223,6 +218,30 @@ const Projects = () => {
       githubLink: 'https://github.com/Preethesh29/Youtube_data-scraping_and_analysis/tree/main'
     },
     {
+      title: 'Auto Fir Registration System',
+      description: 'The Auto FIR Registration System is an innovative software application designed to facilitate the efficient filing of First Information Reports (FIRs) for a range of incidents, including vehicle-related cases, theft, assault, murder, and suicide',
+      image: fir,
+      technologies: ['Python', 'PyQt5', 'SQLite', 'GUI'],
+      liveLink: 'https://github.com/Preethesh29/Auto-FIR-Registration-System-/blob/main/Screenshots/Screenshot%202025-06-21%20093108.png',
+      githubLink: 'https://github.com/Preethesh29/Auto-FIR-Registration-System-'
+    },
+    {
+      title: 'Routewise - AI Route Optimization Platform',
+      description: 'An intelligent route planning application powered by Ola Krutrim MCP that helps users optimize their travel routes, discover unique places, and get personalized travel recommendations.',
+      image: routewise,
+      technologies: ['React', 'Tailwind CSS', 'Ola Krutrim MCP', 'AI Route Optimization', 'Mapbox GL JS', 'Responsive Design '],
+      liveLink: 'https://github.com/Preethesh29/Routewise_AI-Route-Optimization-Platform',
+      githubLink: 'https://github.com/Preethesh29/Routewise_AI-Route-Optimization-Platform'
+    },
+    {
+      title: 'Swiggy Dashboard',
+      description: 'In this project, I performed an in-depth analysis of Swiggy\'s order data to uncover key trends and insights. The analysis focused on customer behavior, popular cuisines, peak order times, and delivery efficiency.',
+      image: Swiggy,
+      technologies: ['Power BI', 'DAX', 'Data Visualization', 'Data Cleaning', 'Data Transformation'],
+      liveLink: 'https://github.com/Preethesh29/Swiggy_Data_Analysis/blob/main/Screenshot%202025-05-22%20211535.png',
+      githubLink: 'https://github.com/Preethesh29/Swiggy_Data_Analysis'
+    },
+    {
       title: 'Shopify Data Analysis',
       description: 'The objective is to help stakeholders identify patterns in revenue generation, customer retention, and engagement trends to support data-driven decision-making.',
       image: Shopify,
@@ -230,14 +249,6 @@ const Projects = () => {
       liveLink: 'https://github.com/Preethesh29/Shopify-Data-Analysis/blob/main/Dashboard_pic.png',
       githubLink: 'https://github.com/Preethesh29/Shopify-Data-Analysis'
     },
-    {
-      title: 'Auto Fir Registration System',
-      description: 'The Auto FIR Registration System is an innovative software application designed to facilitate the efficient filing of First Information Reports (FIRs) for a range of incidents, including vehicle-related cases, theft, assault, murder, and suicide',
-      image: fir,
-      technologies: ['Python', 'PyQt5', 'SQLite', 'GUI'],
-      liveLink: 'https://github.com/Preethesh29/Auto-FIR-Registration-System-/blob/main/Screenshots/Screenshot%202025-06-21%20093108.png',
-      githubLink: 'https://github.com/Preethesh29/Auto-FIR-Registration-System-'
-    }
   ]
 
   return (
