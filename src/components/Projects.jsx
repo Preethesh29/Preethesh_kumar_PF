@@ -5,6 +5,8 @@ import Swiggy from '../assets/Swiggy_dash.png';
 import Shopify from '../assets/Dashboard_pic.png';
 import youtube from '../assets/youtubee.png';
 import fir from '../assets/auto_FIR.png';
+import mjr from '../assets/MajorProject.jpg';
+
 
 
 
@@ -197,10 +199,18 @@ const ProjectLinks = styled.div`
 const Projects = () => {
   const projectsData = [
     {
+      title: 'Verichain: GenAI-Powered Blockchain Evidence Manager (Major Project)',
+      description: 'Developed a GenAI-powered blockchain platform ensuring tamper-proof digital evidence management through AI-based forgery detection and decentralized storage. Integrated Hyperledger Fabric, IPFS, and Zero-Knowledge Proofs for secure access and legal compliance.',
+      image: mjr,
+      technologies: ['Hyperledger Fabric', 'IPFS', 'Zero-Knowledge Proofs', 'GenAI', 'Blockchain', 'Smart Contracts', 'Decentralized Storage', 'AI-based Forgery Detection'],
+      liveLink: '',
+      githubLink: ''
+    },
+    {
       title: 'Swiggy Dashboard',
       description: 'In this project, I performed an in-depth analysis of Swiggy\'s order data to uncover key trends and insights. The analysis focused on customer behavior, popular cuisines, peak order times, and delivery efficiency.',
       image: Swiggy,
-      technologies: ['Power BI','DAX','Data Visualization','Data Cleaning','Data Transformation'],
+      technologies: ['Power BI', 'DAX', 'Data Visualization', 'Data Cleaning', 'Data Transformation'],
       liveLink: 'https://github.com/Preethesh29/Swiggy_Data_Analysis/blob/main/Screenshot%202025-05-22%20211535.png',
       githubLink: 'https://github.com/Preethesh29/Swiggy_Data_Analysis'
     },
@@ -216,7 +226,7 @@ const Projects = () => {
       title: 'Shopify Data Analysis',
       description: 'The objective is to help stakeholders identify patterns in revenue generation, customer retention, and engagement trends to support data-driven decision-making.',
       image: Shopify,
-      technologies: ['Power BI', 'Statistical Analysis', 'Data Modeling','DAX'],
+      technologies: ['Power BI', 'Statistical Analysis', 'Data Modeling', 'DAX'],
       liveLink: 'https://github.com/Preethesh29/Shopify-Data-Analysis/blob/main/Dashboard_pic.png',
       githubLink: 'https://github.com/Preethesh29/Shopify-Data-Analysis'
     },
@@ -272,10 +282,10 @@ const Projects = () => {
                   ))}
                 </ProjectTech>
                 <ProjectLinks>
-                  <ProjectButton 
-                    href={project.liveLink} 
+                  <ProjectButton
+                    href={project.liveLink}
                     className="primary"
-                    target="_blank" 
+                    target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
