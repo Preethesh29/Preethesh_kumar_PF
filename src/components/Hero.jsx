@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { FaDownload } from 'react-icons/fa'
 import { TypeAnimation } from 'react-type-animation'
-import resume from '../assets/CV_DE.pdf'
+import resume from '../assets/CV_PT_26.pdf'
 
 const HeroSection = styled.section`
   min-height: 100vh;
